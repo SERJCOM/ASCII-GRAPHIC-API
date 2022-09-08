@@ -16,6 +16,7 @@ public:
 
     std::string symbol = ".,-~:;=!*#$@";
     Buffer screen;
+    
     Window() {
         HEIGHT = 30;
         WIDTH = 120;
