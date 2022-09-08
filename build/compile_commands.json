@@ -1,7 +1,0 @@
-[
-{
-  "directory": "/mnt/d/prog/vscodeProjects/asciiEngine/build",
-  "command": "/usr/bin/g++     -g   -o CMakeFiles/asciiEngine.dir/src/main.cpp.o -c /mnt/d/prog/vscodeProjects/asciiEngine/src/main.cpp",
-  "file": "/mnt/d/prog/vscodeProjects/asciiEngine/src/main.cpp"
-}
-]
