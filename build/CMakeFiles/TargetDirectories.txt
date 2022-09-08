@@ -1,0 +1,4 @@
+D:/prog/vscodeProjects/asciiEngine/build/CMakeFiles/asciiEngine.dir
+D:/prog/vscodeProjects/asciiEngine/build/CMakeFiles/PACKAGE.dir
+D:/prog/vscodeProjects/asciiEngine/build/CMakeFiles/ALL_BUILD.dir
+D:/prog/vscodeProjects/asciiEngine/build/CMakeFiles/ZERO_CHECK.dir

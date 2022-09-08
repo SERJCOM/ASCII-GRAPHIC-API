@@ -1,0 +1,10 @@
+^D:\PROG\VSCODEPROJECTS\ASCIIENGINE\BUILD\CMAKEFILES\548135DD0B13724E49CBE6B677707E7B\GENERATE.STAMP.RULE
+setlocal
+D:\prog\cmake-3.23.0-windows-x86_64\bin\cmake.exe -SD:/prog/vscodeProjects/asciiEngine -BD:/prog/vscodeProjects/asciiEngine/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/prog/vscodeProjects/asciiEngine/build/asciiEngine.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

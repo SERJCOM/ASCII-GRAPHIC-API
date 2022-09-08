@@ -1,0 +1,23 @@
+# CMake generation dependency list for this directory.
+D:/prog/cmake-3.23.0-windows-x86_64/share/cmake-3.23/Modules/CMakeCInformation.cmake
+D:/prog/cmake-3.23.0-windows-x86_64/share/cmake-3.23/Modules/CMakeCXXInformation.cmake
+D:/prog/cmake-3.23.0-windows-x86_64/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake
+D:/prog/cmake-3.23.0-windows-x86_64/share/cmake-3.23/Modules/CMakeGenericSystem.cmake
+D:/prog/cmake-3.23.0-windows-x86_64/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake
+D:/prog/cmake-3.23.0-windows-x86_64/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake
+D:/prog/cmake-3.23.0-windows-x86_64/share/cmake-3.23/Modules/CMakeRCInformation.cmake
+D:/prog/cmake-3.23.0-windows-x86_64/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake
+D:/prog/cmake-3.23.0-windows-x86_64/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake
+D:/prog/cmake-3.23.0-windows-x86_64/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake
+D:/prog/cmake-3.23.0-windows-x86_64/share/cmake-3.23/Modules/Compiler/MSVC-C.cmake
+D:/prog/cmake-3.23.0-windows-x86_64/share/cmake-3.23/Modules/Compiler/MSVC-CXX.cmake
+D:/prog/cmake-3.23.0-windows-x86_64/share/cmake-3.23/Modules/Platform/Windows-MSVC-C.cmake
+D:/prog/cmake-3.23.0-windows-x86_64/share/cmake-3.23/Modules/Platform/Windows-MSVC-CXX.cmake
+D:/prog/cmake-3.23.0-windows-x86_64/share/cmake-3.23/Modules/Platform/Windows-MSVC.cmake
+D:/prog/cmake-3.23.0-windows-x86_64/share/cmake-3.23/Modules/Platform/Windows.cmake
+D:/prog/cmake-3.23.0-windows-x86_64/share/cmake-3.23/Modules/Platform/WindowsPaths.cmake
+D:/prog/vscodeProjects/asciiEngine/CMakeLists.txt
+D:/prog/vscodeProjects/asciiEngine/build/CMakeFiles/3.23.0/CMakeCCompiler.cmake
+D:/prog/vscodeProjects/asciiEngine/build/CMakeFiles/3.23.0/CMakeCXXCompiler.cmake
+D:/prog/vscodeProjects/asciiEngine/build/CMakeFiles/3.23.0/CMakeRCCompiler.cmake
+D:/prog/vscodeProjects/asciiEngine/build/CMakeFiles/3.23.0/CMakeSystem.cmake
