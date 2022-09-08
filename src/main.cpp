@@ -47,9 +47,6 @@ public:
         printf(screen.buf);
     }
 
-
-    
-
 private:
     float offset; 
     float widthNormal, heightNormal;
@@ -71,16 +68,7 @@ struct Cube {
     void Draw(Window &win) {
         for (float i = -1; i < 1; i += (float)1 / WIDTH) {
             for (float j = -1; j < 1; j += (float) 1 / WIDTH) {
-                glm::vec4 currentCoord(i, j, 1.0f, 1.0f);
-                currentCoord = currentCoord * matr;
                 
-                logs.append(std::to_string(currentCoord.x) + " ");
-                logs.append(std::to_string(currentCoord.y) + " ");
-                logs.append(std::to_string(currentCoord.z));
-                logs.append("\n");
-
-                win.SetPixel(currentCoord);
-                //std::cout << currentCoord.x << " " << currentCoord.y << " " << currentCoord.z << " " << currentCoord.w << std::endl;
             }
         }
     }
@@ -97,6 +85,6 @@ int main()
 
     win.Draw();
 
-    std::cout << "\n" << logs.c_str() << std::endl;
+    //std::cout << "\n" << logs.c_str() << std::endl;
     return 0;
 }
