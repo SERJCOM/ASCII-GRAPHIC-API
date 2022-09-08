@@ -11,7 +11,7 @@ public:
 
     void SetNewBuffer(int size);
 
-    void ClearBuffer();
+    virtual void ClearBuffer();
 
     ~Buffer(){
         delete[] buf;

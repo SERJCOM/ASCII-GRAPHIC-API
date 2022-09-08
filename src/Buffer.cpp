@@ -9,7 +9,8 @@ void Buffer::SetNewBuffer(int size) {
 
 void Buffer::ClearBuffer() {
     for (int i = 0; i < size; i++) {
-        buf[i] = ' ';
+        buf[i] = 0;
     }
+    buf[size - 1] = '\n';
 }
 
