@@ -16,7 +16,7 @@ public:
 
     std::string symbol = ".,-~:;=!*#$@";
     Buffer screen;
-    
+
     Window() {
         HEIGHT = 30;
         WIDTH = 120;
@@ -46,6 +46,9 @@ public:
     void Draw() {
         printf(screen.buf);
     }
+
+
+    
 
 private:
     float offset; 
