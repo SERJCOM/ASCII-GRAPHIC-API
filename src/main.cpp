@@ -50,6 +50,7 @@ public:
 private:
     float offset; 
     float widthNormal, heightNormal;
+    
 };
 
 struct Cube {
