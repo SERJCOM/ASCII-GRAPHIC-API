@@ -32,8 +32,8 @@ public:
     void SetPixel(glm::vec4 coor) {
         int x, y;
         x = (coor.x ) + WIDTH / 2;
-        y = (coor.y ) + HEIGHT / 2;
-        //x = x *  aspect * pixelaspect;
+        y = (coor.y *   aspect  ) + HEIGHT / 2;
+        //y = y *  aspect * pixelaspect;
         if ( x >= 0 && y >= 0 && x < WIDTH && y < HEIGHT) {
             int adress = static_cast<int>(x + y * WIDTH );
             screen.buf[adress] = symbol[2];
@@ -47,6 +47,6 @@ public:
 private:
     float offset; 
     float widthNormal, heightNormal;
-    float aspect = (float)WIDTH / HEIGHT;
-    float pixelaspect = 11.0f / 24.0f;
+    float aspect = ((float)WIDTH / HEIGHT) * (11.0f / 24.0f);
+
 };

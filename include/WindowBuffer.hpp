@@ -9,7 +9,7 @@ class WindowBuffer: public Buffer{
             for (int i = 0; i < size; i++) {
                 buf[i] = ' ';
             }
-            buf[size - 1] = '\n';
+            buf[size - 1] = 0;
         }
 
 };
