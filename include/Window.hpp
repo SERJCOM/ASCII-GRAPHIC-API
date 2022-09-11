@@ -6,12 +6,13 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include "WindowBuffer.hpp"
+#include <string>
 
 class Window {
 public:
     int HEIGHT, WIDTH;
 
-    std::string symbol = ".,-~:;=!*#$@";
+    std::string symbol = "`´¨·…¸ˆ˜’‚‘’:;›‹~“”„ª^—¡!|/)(+{*}?";
     WindowBuffer screen;
 
     Window() {
@@ -30,13 +31,17 @@ public:
     }
 
     void SetPixel(glm::vec4 coor) {
-        int x, y;
+        int x, y, z;
         x = (coor.x ) + WIDTH / 2;
         y = (coor.y *   aspect  ) + HEIGHT / 2;
         //y = y *  aspect * pixelaspect;
         if ( x >= 0 && y >= 0 && x < WIDTH && y < HEIGHT) {
             int adress = static_cast<int>(x + y * WIDTH );
-            screen.buf[adress] = symbol[2];
+            
+            if(coor.z < 0.0f){ coor.z = 0;}
+            if (coor.z > 11.0f){ coor.z = 11.0f;}
+            
+            screen.buf[adress] = symbol[(int)coor.z];
         }
     }
 

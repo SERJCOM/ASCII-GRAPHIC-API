@@ -10,7 +10,7 @@
 class Object{
     protected:
     glm::mat4 matrix = glm::mat4(1.0f);
-
+    glm::mat4 addMat;
     public:
 
     void Rotate(glm::vec3 axis, float angle){
@@ -23,6 +23,10 @@ class Object{
 
     void Translate(glm::vec3 translate){
         matrix = glm::translate(matrix, translate);
+    }
+
+    void AddMatrix(glm::mat4 mat){
+        addMat = mat;
     }
 };
 
@@ -42,7 +46,10 @@ public:
                 for (float j = -1; j < 1; j += (float) 1/ WIDTH) {
                     glm::vec4 point(i , j , z, 1.0f);
                     
-                    point = point * matrix;
+                    
+                    point = matrix * point;
+                    
+                    //point.z = z * 10;
                     //std::cout << point.x << " " << point.y << " " << point.z << std::endl;
                     win.SetPixel(point);
                 }
