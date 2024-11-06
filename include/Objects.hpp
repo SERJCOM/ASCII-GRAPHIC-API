@@ -5,13 +5,24 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-#include "Window.hpp"
+#include <vector>
 
-class Object{
+#include "Window.hpp"
+#include "Custom.hpp"
+#include "Shader.hpp"
+
+
+
+class IObject{
     protected:
     glm::mat4 matrix = glm::mat4(1.0f);
     glm::mat4 addMat;
+
+    std::vector<Coords> coords;
+
     public:
+
+    // virtual void Draw()
 
     void Rotate(glm::vec3 axis, float angle){
         matrix = glm::rotate(matrix, glm::radians(angle), axis); 
@@ -30,30 +41,26 @@ class Object{
     }
 };
 
-class Cube:public Object {
+class Cube:public IObject {
 private:
-    int WIDTH;
-    glm::vec3 center = glm::vec3(0, 0, 0);
 
+    int WIDTH = 10;
+    int HEIGHT = 10;
 
 public:
-    Cube(int width) : WIDTH(width) {}
-
-    
-    void Draw(Window &win) {
-        for(float z = -1; z < 1 ; z+=(float)1/WIDTH){
-            for (float i = -1; i < 1 ; i += (float)1 / WIDTH) {
-                for (float j = -1; j < 1; j += (float) 1/ WIDTH) {
-                    glm::vec4 point(i , j , z, 1.0f);
-                    
-                    
-                    point = matrix * point;
-                    
-                    //point.z = z * 10;
-                    //std::cout << point.x << " " << point.y << " " << point.z << std::endl;
-                    win.SetPixel(point);
+    Cube(){
+        coords.clear();
+        for(int x = 0; x < WIDTH; x++){
+            for(int y = 0; y < HEIGHT; y++){
+                if(std::abs(x+y) + std::abs(x-y) <= WIDTH){
+                    coords.push_back(Coords(x, y));
                 }
             }
         }
+    }
+
+    
+    void Draw(Shader& shader) {
+        shader.SetData(coords);
     }
 };

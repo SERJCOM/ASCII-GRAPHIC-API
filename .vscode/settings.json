@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.py": "python",
+        "cmath": "cpp",
+        "array": "cpp"
+    }
+}

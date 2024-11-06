@@ -16,8 +16,8 @@ public:
     WindowBuffer screen;
 
     Window() {
-        HEIGHT = 30;
-        WIDTH = 120;
+        HEIGHT = 38;
+        WIDTH = 144;
         screen.SetNewBuffer(HEIGHT * WIDTH + 1);
         offset = (float)(WIDTH / HEIGHT) * (11.0f / 24.0f);
         widthNormal = (float) 2 / WIDTH - 1 / WIDTH;

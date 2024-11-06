@@ -1,15 +1,34 @@
 #pragma once
 
 #include <iostream>
-#include "Buffer.hpp"
+#include <vector>
 
-class WindowBuffer: public Buffer{
-    public:
-        virtual void ClearBuffer(){
-            for (int i = 0; i < size; i++) {
-                buf[i] = ' ';
-            }
-            buf[size - 1] = 0;
-        }
+
+class WindowBuffer {
+
+std::vector<char> color_buff;
+
+public :
+
+struct ViewPort{
+    int x, y, width, height;
+} viewport;
+
+
+    void SetNewBuffer(int size)  {
+        color_buff.reserve(size);
+    }
+
+    void ClearBuffer() {
+        color_buff.clear();
+    }
+
+    std::vector<char>& GetData(){
+        return color_buff;
+    }
+
+    void SetViewPort(int x, int y, int width, int height){
+        viewport{x, y, width, height};
+    }
 
 };
