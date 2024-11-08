@@ -18,26 +18,43 @@ int main()
 {
 
     const int WIDTH = 156;
-    const int HEIGHT = 42;
+    const int HEIGHT = 40;
 
     std::array<char, WIDTH * HEIGHT + 1> data;
-    data[WIDTH * HEIGHT] = '\0';
+
+    data[WIDTH * HEIGHT ] = '\0';
 
     float bias = 16.0 / 9;
 
     char symbol[] = " .:o*$&#@";
 
-    // std::cout <<"\u2582"<<std::endl;
+
+    // char data_[HEIGHT];
+
+    // for(int i = 0; i < HEIGHT; i++){
+    //     data_[i] = std::to_string(i % 10).c_str()[0];
+    //     // std::cout << i << std::endl;
+    // }
+    // printf("%s", data_);
+
+
+
+
 
     
 
     for (int i = 0; i < 10000; i++)
     {
+        // std::cout << "\033[2J";
+        // std::cout << "\033[H";
 
-        for (int i = 0; i < WIDTH; i++)
+        for (int j = 0; j < HEIGHT; j++)
         {
-            for (int j = 0; j < HEIGHT; j++)
+
+            for (int i = 0; i < WIDTH; i++)
             {
+                
+                data[j * WIDTH + i] = ' ';
 
                 float x = (i / (float)WIDTH) * 2 - 1;
                 float y = (j / (float)HEIGHT) * 2 - 1;
@@ -45,23 +62,22 @@ int main()
 
                 if (x * x + y * y <= 0.5)
                 {
-
                     float z = std::pow(std::abs(x * x + y * y - 0.5), 0.5);
-
                     int depth = (z) * 10;
-                    // std::cout << z << '\n';
-
                     data[j * WIDTH + i] = symbol[depth];
                 }
-                else
-                {
-                    data[j * WIDTH + i] = ' ';
-                }
+
+                
             }
+            // data[j * WIDTH + WIDTH ] = '\n';
+
+            int index = j * WIDTH ;
+            data[index] = std::to_string(j % 10).c_str()[0];
+            // std::cout << index << std::endl;
         }
-        std::this_thread::sleep_for(std::chrono::seconds(2));
+        data[WIDTH * HEIGHT - 1] = '\n';
+        std::this_thread::sleep_for(std::chrono::milliseconds(500));
         printf("%s", data.data());
-        // write(STDOUT_FILENO, data.data(), data.size());
     }
 
     return 0;
