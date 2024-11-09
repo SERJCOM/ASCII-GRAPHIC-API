@@ -43,7 +43,7 @@ public:
         }
     }
 
-    std::vector<glm::vec3> &GetCoords()
+    const std::vector<glm::vec3> &GetCoords() const 
     {
         return coords;
     }
@@ -68,8 +68,9 @@ bool CheckStrictRange(T val, T lo, T hi)
 glm::vec2 NormalUVtoAbsUV(glm::vec2 nUV, int width, int height)
 {
     glm::vec2 ret;
+
     ret.x = (int)((nUV.x + 1) / 2 * (float)width);
-    ret.y = (int)((nUV.y + 1) / 2 * (float)width);
+    ret.y = (int)((nUV.y + 1) / 2 * (float)height);
 
     return ret;
 }
@@ -104,16 +105,22 @@ int main()
             }
         }
 
-        for (auto vec_ : sphere.GetCoords())
+        for (const auto vec_ : sphere.GetCoords())
         {
             glm::vec3 vec = vec_;
-            vec *= 10;
+            // vec *= 10;
 
-            vec.x *= bias;
+            vec.y *= bias;
 
-            vec += glm::vec3(glm::vec2(sin(t)), 0.0f);
+            vec *= 0.5;
 
-            uv = glm::vec2((vec.x / (float)WIDTH) * 2 - 1, (vec.y / (float)HEIGHT) * 2 - 1);
+            vec += glm::vec3(glm::vec2(sin(t * 0.1)), 0.0f);
+
+            
+
+            // uv = glm::vec2((vec.x / (float)WIDTH) * 2 - 1, (vec.y / (float)HEIGHT) * 2 - 1);
+
+            uv = vec;
 
             if (CheckNotStrictRange(uv.x, -1.0f, 1.0f) && CheckNotStrictRange(uv.y, -1.0f, 1.0f))
             {
